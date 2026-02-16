@@ -19,7 +19,7 @@ pageSections:
     overlay: dark
     paddingVertical: 6xl
   - _component: page-sections/features/feature-split
-    eyebrow: Eyebrow text
+    eyebrow:
     heading: How it all started
     subtext: >-
       I became a celebrant in November 2023. After performing my first wedding

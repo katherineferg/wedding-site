@@ -19,16 +19,18 @@ pageSections:
     overlay: dark
     paddingVertical: 6xl
   - _component: page-sections/features/feature-split
-    eyebrow:
+    eyebrow: about me
     heading:
     subtext: >-
-      I've had the privilege of living in this beautiful city for most of my
-      life, and now, I've had the chance to perform ceremonies in Dunedin's most
-      beautiful and iconic spots.<br><br>I love working with couples to ensure
-      their ceremony is just how they imagined it. Working closely with each
-      couple has shown me that everyone's story is unique, but the one thing
-      they all have in common is wanting to celebrate their love with the people
-      who matter most.
+      Born and raised in Dunedin, I've had the privilege of living in this
+      beautiful (and lets be honest, cold) city for most of my life. And now,
+      I've had the chance to perform ceremonies in some of it's most beautiful
+      and iconic spots.
+
+
+      When I'm not doing my celebrant duties, I'm usually found playing netball
+      & volleyball, in the hot yoga studio, walking dogs, or having a drink with
+      friends in the sun 🥂
     buttonSections: []
     imageSource: /src/assets/images/wedding-moment.jpg
     imageAlt: A beautiful wedding moment

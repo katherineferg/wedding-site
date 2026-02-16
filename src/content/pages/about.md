@@ -23,8 +23,9 @@ pageSections:
     heading: How it all started
     subtext: >-
       I became a celebrant in November 2023. After performing my first wedding
-      for two very close friends, I quickly realised how special, and how much
-      of an honour it is to be part of someone's big day.
+      for two very close friends (those stunners to your right), I quickly
+      realised how special, and how much of an honour it is to be part of
+      someone's big day.
     buttonSections: []
     imageSource: /src/assets/images/ceremony-hannah-larsen.jpg
     imageAlt: Wedding ceremony

@@ -43,7 +43,7 @@ pageSections:
     colorScheme: inherit
     backgroundColor: accent
   - _component: page-sections/features/feature-split
-    eyebrow: Eyebrow text
+    eyebrow:
     heading: Every ceremony tells a story
     subtext: >-
       I became a celebrant in November 2023. After performing my first wedding
@@ -58,7 +58,7 @@ pageSections:
     buttonSections: []
     imageSource: /src/assets/images/ceremony-outdoor.jpg
     imageAlt: Outdoor wedding ceremony
-    imageAspectRatio: portrait
+    imageAspectRatio: square
     imageRounded: true
     reverse: false
     colorScheme: default

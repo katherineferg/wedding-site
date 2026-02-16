@@ -1,0 +1,75 @@
+---
+import AccordionItem from "./AccordionItem.astro";
+
+const {
+  items,
+  openFirst,
+  singleOpen = false,
+  label,
+  editable = true,
+  "data-prop": customDataProp = "items",
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const slugifyLabel = (label: string) => {
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+};
+
+const generatedLabel = label || `Accordion-${crypto.randomUUID()}`;
+
+if (!htmlAttributes.id) {
+  htmlAttributes.id = slugifyLabel(generatedLabel);
+}
+
+const accordionName = singleOpen ? `accordion-${crypto.randomUUID()}` : undefined;
+
+const arrayDataAttributes = editable
+  ? {
+      "data-editable": "array",
+      "data-prop": customDataProp,
+      "data-component-key": "_component",
+      "data-id-key": "_component",
+    }
+  : {};
+
+const hasItems = items?.length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+
+if (!_component && !hasItems && !hasSlotContent) return;
+---
+
+<div class:list={["accordion"]} {...arrayDataAttributes} {...htmlAttributes}>
+  <slot>
+    {
+      items &&
+        items.length > 0 &&
+        items.map((item: any, index: number) => {
+          const isFirst = index === 0 && openFirst;
+
+          return (
+            <editable-array-item data-component="building-blocks/wrappers/accordion/accordion-item">
+              <AccordionItem
+                title={item.title}
+                contentSections={item.contentSections}
+                isOpen={isFirst}
+                accordionName={accordionName}
+              />
+            </editable-array-item>
+          );
+        })
+    }
+  </slot>
+</div>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .accordion {
+      margin-top: var(--spacing-lg);
+    }
+  }
+</style>

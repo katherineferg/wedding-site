@@ -1,0 +1,99 @@
+---
+import DefinitionListItem from "./DefinitionListItem.astro";
+
+const {
+  items,
+  alignX = "start",
+  class: className,
+  "data-prop": customDataProp = "items",
+  editable = true,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const arrayDataAttributes = editable
+  ? {
+      "data-editable": "array",
+      "data-prop": customDataProp,
+      "data-component-key": "_component",
+      "data-id-key": "_component",
+    }
+  : {};
+---
+
+<dl
+  class:list={["definition-list", `alignment-${alignX}`, className]}
+  {...arrayDataAttributes}
+  {...htmlAttributes}
+>
+  {
+    items && items.length > 0 ? (
+      items.map((item: any) => (
+        <editable-array-item data-component="building-blocks/core-elements/definition-list/definition-list-item">
+          <DefinitionListItem title={item.title} text={item.text} editable={editable} />
+        </editable-array-item>
+      ))
+    ) : (
+      <slot />
+    )
+  }
+</dl>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .definition-list {
+      display: grid;
+      gap: var(--spacing-em-sm) var(--spacing-em-md);
+      grid-template-columns: auto 1fr;
+      margin: 0;
+      margin-top: var(--spacing-lg);
+
+      > editable-array-item {
+        display: grid;
+        gap: var(--spacing-em-sm) var(--spacing-em-md);
+        grid-column: 1 / -1;
+        grid-template-columns: auto 1fr;
+      }
+
+      &.alignment-center {
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+
+        > editable-array-item {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        > editable-array-item > .title,
+        > .title {
+          text-align: end;
+        }
+      }
+
+      &.alignment-end {
+        align-items: end;
+        grid-template-columns: auto auto;
+        justify-content: end;
+
+        > editable-array-item {
+          grid-template-columns: auto auto;
+        }
+
+        > editable-array-item > .title,
+        > .title {
+          text-align: start;
+        }
+
+        > editable-array-item > .content,
+        > .content {
+          text-align: end;
+        }
+      }
+
+      > editable-array-item > .content,
+      > .content {
+        margin: 0;
+      }
+    }
+  }
+</style>

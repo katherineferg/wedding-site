@@ -1,0 +1,30 @@
+---
+import Component from "@components/utils/renderBlock.astro";
+
+const { contentSections = [], _component, ...htmlAttributes } = Astro.props;
+---
+
+<div class="slide" role="group" {...htmlAttributes}>
+  <slot>
+    {
+      contentSections && contentSections.length > 0 && (
+        <Component contentSections={contentSections} />
+      )
+    }
+  </slot>
+</div>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .slide {
+    flex-shrink: 0;
+    flex-basis: calc(max(var(--slide-width, 100%), var(--min-slide-width, 0px)));
+    container-type: inline-size;
+
+    > editable-array > editable-array-item:first-child > *:first-child,
+    > :not(editable-array):first-child {
+      margin-top: 0 !important;
+    }
+  }
+  }
+</style>

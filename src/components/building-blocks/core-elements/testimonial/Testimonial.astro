@@ -1,0 +1,151 @@
+---
+import Image from "@core-elements/image/Image.astro";
+import MarkdownIt from "markdown-it";
+const {
+  text,
+  authorName,
+  authorDescription,
+  alignX = "center",
+  authorImage = "",
+  class: className,
+  editable = true,
+  "data-prop": customDataProp = "text",
+  "data-prop-author-name": customDataPropAuthorName = "authorName",
+  "data-prop-author-description": customDataPropAuthorDescription = "authorDescription",
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const md = MarkdownIt({ html: true });
+const MarkdownText = text ? md.render(text) : "";
+
+const textDataAttributes =
+  editable && customDataProp
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataProp,
+      }
+    : {};
+
+const authorNameDataAttributes =
+  editable && customDataPropAuthorName
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataPropAuthorName,
+      }
+    : {};
+
+const authorDescriptionDataAttributes =
+  editable && customDataPropAuthorDescription
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataPropAuthorDescription,
+      }
+    : {};
+---
+
+<blockquote class:list={["testimonial", `alignment-${alignX}`, className]} {...htmlAttributes}>
+  <div class="quote" {...textDataAttributes}>
+    <slot>
+      {text && <Fragment set:html={MarkdownText} />}
+    </slot>
+  </div>
+  <div class="author">
+    <Image
+      source={authorImage}
+      alt={authorName}
+      width={100}
+      height={100}
+      class="author-image"
+      editable={editable}
+      data-prop-src="authorImage"
+      data-prop-alt="authorName"
+    />
+    <cite class="author-content">
+      <strong class="name" {...authorNameDataAttributes}>
+        {authorName}
+      </strong>
+      {
+        authorDescription && (
+          <>
+            <br />
+            <span class="description" {...authorDescriptionDataAttributes}>
+              {authorDescription}
+            </span>
+          </>
+        )
+      }
+    </cite>
+  </div>
+</blockquote>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .testimonial {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-em-sm);
+      margin: 0;
+      padding: var(--spacing-2xl) var(--spacing-lg);
+
+      &.alignment-center {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      > .quote {
+        margin: 0;
+
+        * {
+          font-family: var(--font-headings);
+          font-size: var(--font-size-heading-sm);
+          font-style: italic;
+          line-height: 1.5;
+        }
+
+        *:first-child {
+          margin-top: 0;
+        }
+
+        *:last-child {
+          margin-bottom: 0;
+        }
+
+        *:first-child::before {
+          content: "\201C";
+        }
+
+        *:last-child::after {
+          content: "\201D";
+        }
+      }
+
+      > .author {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-md);
+
+        > .author-content {
+          font-style: normal;
+          text-align: start;
+        }
+
+        > .author-image {
+          aspect-ratio: var(--ratio-square);
+          width: 80px;
+          height: 80px;
+
+          picture {
+            border-radius: var(--radius-full);
+            overflow: hidden;
+          }
+
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+</style>

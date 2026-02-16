@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Home",
+    "path": "/component-library/"
+  },
+  {
+    "name": "Getting Started",
+    "path": "/component-library/getting-started/"
+  },
+  {
+    "name": "Component Builder",
+    "path": "/component-library/component-builder/"
+  },
+  {
+    "group": "Building Blocks",
+    "subcategoryOrder": ["core-elements", "wrappers", "forms"]
+  },
+  {
+    "group": "Page Sections",
+    "subcategoryOrder": ["heroes", "features", "info-blocks", "people", "ctas", "builders"]
+  },
+  {
+    "group": "Navigation"
+  }
+]

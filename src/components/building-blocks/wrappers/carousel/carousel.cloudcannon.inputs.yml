@@ -1,0 +1,25 @@
+label:
+  comment: Optional label for the carousel to help identify it in the editor.
+  type: text
+slides:
+  comment: Array of slides to display in the carousel.
+  type: array
+  options:
+    structures: _structures.slides
+autoPlay:
+  comment: Enable auto-play functionality.
+  type: switch
+autoScroll:
+  comment: Enable auto-scroll functionality.
+  type: switch
+slideWidthPercent:
+  comment: Width of each slide as a percentage of the carousel (e.g., 33, 50, 100).
+  type: range
+  options:
+    min: 0
+    max: 100
+    step: 1
+minSlideWidth:
+  comment: Minimum width of slides in pixels. Prevents slides from getting too small.
+  type: number
+

@@ -1,0 +1,32 @@
+---
+import RenderBlock from "@components/utils/renderBlock.astro";
+
+const { contentSections, index, uniqueId, _component, ...htmlAttributes } = Astro.props;
+---
+
+<div
+  class="panel"
+  id={`panel-${uniqueId}-${index}`}
+  role="tabpanel"
+  aria-labelledby={`tablabel-${uniqueId}-${index}`}
+  aria-hidden={index !== 0}
+  {...htmlAttributes}
+>
+  <RenderBlock contentSections={contentSections} />
+</div>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .panel {
+      container-type: inline-size;
+      animation: fade-in var(--animation-slow) ease-in-out forwards;
+      display: none;
+      padding: 0 var(--spacing-md);
+
+      > editable-array > editable-array-item:first-child > *:first-child,
+      > :not(editable-array):first-child {
+        margin-top: 0 !important;
+      }
+    }
+  }
+</style>

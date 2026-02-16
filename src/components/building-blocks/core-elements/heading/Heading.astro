@@ -1,0 +1,134 @@
+---
+import Icon from "@core-elements/icon/Icon.astro";
+// @ts-ignore
+import MarkdownIt from "markdown-it";
+
+const {
+  text,
+  level = "h2",
+  size,
+  alignX = "start",
+  iconName,
+  iconPosition = "before",
+  class: className,
+  editable = true,
+  "data-prop": customDataProp = "text",
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const textDataAttributes =
+  editable && customDataProp
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataProp,
+      }
+    : {};
+
+const md = MarkdownIt({ html: true });
+let MarkdownText = text ? md.renderInline(text) : "";
+
+MarkdownText = MarkdownText.replace(/\n/g, "<br />");
+const Tag = level;
+
+const hasText = text?.trim().length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+
+if (!_component && !hasText && !hasSlotContent) return;
+---
+
+<Tag
+  class:list={["heading", size && `size-${size}`, `align-${alignX}`, className]}
+  {...htmlAttributes}
+>
+  {
+    iconPosition == "before" && (
+      <Icon
+        name={iconName}
+        size="none"
+        class="heading-icon"
+        aria-hidden="true"
+        role="presentation"
+      />
+    )
+  }
+  <span class="heading-text" {...textDataAttributes}>
+    <slot>
+      {text && <Fragment set:html={MarkdownText} />}
+    </slot>
+  </span>
+  {
+    iconPosition === "after" && (
+      <Icon
+        name={iconName}
+        size="none"
+        class="heading-icon heading-icon-after"
+        aria-hidden="true"
+        role="presentation"
+      />
+    )
+  }
+</Tag>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .heading {
+      margin-top: var(--spacing-lg);
+
+      .heading-icon {
+        bottom: 0.1em;
+        margin-inline-end: 0.2em;
+        position: relative;
+
+        &.heading-icon-after {
+          margin-inline: 0.2em 0;
+        }
+      }
+
+      &.size-xs {
+        font-size: var(--font-size-heading-xs);
+      }
+
+      &.size-sm {
+        font-size: var(--font-size-heading-sm);
+      }
+
+      &.size-md {
+        font-size: var(--font-size-heading-md);
+      }
+
+      &.size-lg {
+        font-size: var(--font-size-heading-lg);
+      }
+
+      &.size-xl {
+        font-size: var(--font-size-heading-xl);
+      }
+
+      &.size-2xl {
+        font-size: var(--font-size-heading-2xl);
+      }
+
+      &.size-3xl {
+        font-size: var(--font-size-heading-3xl);
+      }
+
+      &.size-4xl {
+        font-size: var(--font-size-heading-4xl);
+      }
+
+      &.align-start {
+        text-align: start;
+      }
+
+      &.align-center {
+        text-align: center;
+      }
+
+      &.align-end {
+        text-align: end;
+      }
+    }
+  }
+</style>

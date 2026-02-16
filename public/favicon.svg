@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: hsl(338 28% 55%); }
+    .letter { fill: hsl(40 30% 99%); }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: hsl(340 25% 65%); }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="6"/>
+  <text class="letter" x="16" y="24" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" text-anchor="middle">K</text>
+</svg>

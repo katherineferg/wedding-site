@@ -1,0 +1,32 @@
+label: Hero Wide
+icon: hero
+description: Split hero with text on the left and a full-bleed image on the right.
+value:
+  _component: page-sections/heroes/hero-wide
+  eyebrow: Eyebrow text
+  heading: Heading text
+  subtext: Subtext placeholder text that will be replaced with actual content.
+  buttonSections:
+    - _component: building-blocks/core-elements/button
+      text: My Button
+      hideText: false
+      link: ""
+      iconName: ""
+      iconPosition: before
+      variant: primary
+      size: md
+  imageSource: ""
+  imageAlt: ""
+  colorScheme: inherit
+  backgroundColor: base
+preview:
+  text:
+    - Hero Wide
+  subtext:
+    - key: heading
+  icon: hero
+picker_preview:
+  text: Hero Wide
+  subtext: Split hero with text on the left and a full-bleed image on the right.
+_inputs_from_glob:
+  - /src/components/page-sections/heroes/hero-wide/hero-wide.cloudcannon.inputs.yml

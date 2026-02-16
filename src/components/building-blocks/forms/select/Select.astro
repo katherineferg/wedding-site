@@ -1,0 +1,79 @@
+---
+import SelectOption from "./SelectOption.astro";
+
+const {
+  label,
+  name,
+  options = [],
+  placeholder,
+  required = false,
+  value,
+  class: className,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const fieldId = htmlAttributes.id || `select-${crypto.randomUUID()}`;
+---
+
+<div class:list={["select", className]}>
+  {
+    label && (
+      <label for={fieldId} class="label">
+        {label}
+        {required && (
+          <span class="select-required" aria-label="required">
+            *
+          </span>
+        )}
+      </label>
+    )
+  }
+  <select
+    name={name}
+    id={fieldId}
+    required={required}
+    aria-required={required}
+    class="field"
+    {...htmlAttributes}
+  >
+    {
+      placeholder && (
+        <option value="" disabled>
+          {placeholder}
+        </option>
+      )
+    }
+    {
+      options.length > 0 ? (
+        options.map((option) => (
+          <SelectOption
+            value={option.value}
+            label={option.label}
+            selected={option.value === value}
+          />
+        ))
+      ) : (
+        <slot />
+      )
+    }
+  </select>
+</div>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .select {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+      width: 100%;
+      margin: 0;
+      margin-bottom: var(--spacing-md);
+
+      .select-required {
+        color: red;
+        margin-inline-end: var(--spacing-em-xs);
+      }
+    }
+  }
+</style>

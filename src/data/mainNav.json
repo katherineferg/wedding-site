@@ -1,0 +1,17 @@
+{
+  "logoSource": "",
+  "logoAlt": "Kate Ferguson",
+  "navData": [
+    {
+      "name": "Home",
+      "path": "/",
+      "children": []
+    },
+    {
+      "name": "About",
+      "path": "/about/",
+      "children": []
+    }
+  ],
+  "buttonSections": []
+}

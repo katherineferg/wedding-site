@@ -1,0 +1,147 @@
+---
+import ListItem from "./ListItem.astro";
+
+const {
+  items = [],
+  direction = "vertical",
+  alignX = "start",
+  size = "md",
+  listType = "icon",
+  class: className,
+  "data-prop": customDataProp = "items",
+  editable = true,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const arrayDataAttributes = editable
+  ? {
+      "data-editable": "array",
+      "data-prop": customDataProp,
+      "data-component-key": "_component",
+      "data-id-key": "_component",
+    }
+  : {};
+
+const hasItems = items?.length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+
+const ListTag = listType === "numbered" ? "ol" : "ul";
+const showIcons = listType === "icon";
+
+if (!_component && !hasItems && !hasSlotContent) return;
+---
+
+<ListTag
+  class:list={[
+    "list",
+    `size-${size}`,
+    `direction-${direction}`,
+    `alignment-${alignX}`,
+    `type-${listType}`,
+    className,
+  ]}
+  role="list"
+  {...arrayDataAttributes}
+  {...htmlAttributes}
+>
+  <slot>
+    {
+      items &&
+        items.length > 0 &&
+        items.map((item: any) => (
+          <editable-array-item data-component="building-blocks/core-elements/list/list-item">
+            <ListItem
+              text={item.text}
+              iconName={item.iconName}
+              iconColor={item.iconColor}
+              editable={editable}
+              showIcon={showIcons}
+            />
+          </editable-array-item>
+        ))
+    }
+  </slot>
+</ListTag>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-em-sm);
+      margin: 0;
+      margin-top: var(--spacing-lg);
+      padding-inline-start: var(--spacing-md);
+
+      &.direction-horizontal {
+        flex-flow: row wrap;
+        gap: var(--spacing-em-sm);
+      }
+
+      &.type-bullet {
+        list-style: disc;
+      }
+
+      &.type-numbered {
+        list-style: decimal;
+      }
+
+      &.type-bullet,
+      &.type-numbered {
+
+        &.direction-horizontal > li:not(:first-child), &.direction-horizontal > editable-array-item:not(:first-child) li {
+          margin-inline-start: var(--spacing-lg);
+        }
+      }
+
+      &.type-icon {
+        list-style: none;
+        padding: 0;
+      }
+
+      &.alignment-end {
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+
+      &.alignment-center {
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.size-xs {
+        font-size: var(--font-size-xs);
+      }
+
+      &.size-sm {
+        font-size: var(--font-size-sm);
+      }
+
+      &.size-md {
+        font-size: var(--font-size-md);
+      }
+
+      &.size-lg {
+        font-size: var(--font-size-lg);
+      }
+
+      &.size-xl {
+        font-size: var(--font-size-xl);
+      }
+
+      &.size-2xl {
+        font-size: var(--font-size-2xl);
+      }
+
+      &.size-3xl {
+        font-size: var(--font-size-3xl);
+      }
+
+      &.size-4xl {
+        font-size: var(--font-size-4xl);
+      }
+    }
+  }
+</style>

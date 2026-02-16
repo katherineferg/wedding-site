@@ -1,0 +1,71 @@
+---
+import Icon from "@core-elements/icon/Icon.astro";
+import MarkdownIt from "markdown-it";
+
+const {
+  text = "",
+  iconName,
+  iconColor = "default",
+  showIcon = true,
+  class: className,
+  editable = true,
+  "data-prop": customDataProp = "text",
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const md = new MarkdownIt({ html: true });
+
+const textDataAttributes =
+  editable && customDataProp
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataProp,
+      }
+    : {};
+---
+
+<li
+  class:list={["item", showIcon && iconName && "list-item-has-icon", className]}
+  {...htmlAttributes}
+>
+  {
+    showIcon && iconName && (
+      <Icon name={iconName} color={iconColor} size="none" class="list-icon" aria-hidden="true" />
+    )
+  }
+  <p {...textDataAttributes}>
+    {text ? <Fragment set:html={md.renderInline(text)} /> : <slot />}
+  </p>
+</li>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .item {
+      &.list-item-has-icon {
+        display: block;
+      }
+
+      > p {
+        display: inline;
+        margin: 0;
+        font-size: inherit;
+      }
+
+      > .list-icon {
+        display: inline-block;
+        flex-shrink: 0;
+        height: 1em;
+        margin-right: var(--spacing-em-xs);
+        vertical-align: -0.15em;
+        width: 1em;
+
+        svg {
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+const {
+  title,
+  text,
+  class: className,
+  editable = true,
+  "data-prop-title": customDataPropTitle = "title",
+  "data-prop-content": customDataPropContent = "text",
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const titleDataAttributes =
+  editable && customDataPropTitle
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataPropTitle,
+      }
+    : {};
+
+const contentDataAttributes =
+  editable && customDataPropContent
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataPropContent,
+      }
+    : {};
+
+const hasTitle = title?.trim().length > 0;
+const titleSlotContent = Astro.slots.has("title") ? await Astro.slots.render("title") : null;
+const hasTitleSlotContent = (titleSlotContent?.toString().trim().length ?? 0) > 0;
+const hasText = text?.trim().length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+
+if (!_component && ((!hasTitle && !hasTitleSlotContent) || (!hasText && !hasSlotContent))) return;
+---
+
+<dt class:list={["title", className]} role="term" {...titleDataAttributes} {...htmlAttributes}>
+  <span {...titleDataAttributes}>
+    <slot name="title">
+      {title}
+    </slot>
+  </span>
+</dt>
+<dd class:list={["content", className]} role="definition" {...htmlAttributes}>
+  <span {...contentDataAttributes}>
+    <slot>
+      {text}
+    </slot>
+  </span>
+</dd>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .title {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+</style>

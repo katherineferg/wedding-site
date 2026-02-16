@@ -1,0 +1,83 @@
+---
+import StructuredData from "@components/utils/StructuredData.astro";
+import seoData from "@data/seo.json";
+import "@styles/style.pcss";
+import { SEO } from "astro-seo";
+
+export interface Props {
+  title: string;
+  description?: string | null;
+  keywords?: string[] | null;
+  image?: string | null;
+  canonical?: string | null;
+  contentSections?: any;
+}
+
+const props = Astro.props;
+const formattedTitle = seoData.titleFormat.replace("{title}", props.title);
+const pageDescription = props.description || seoData.description;
+const pageImage = props.image || seoData.logoSource;
+---
+
+<!doctype html>
+<html lang="en" data-theme="default">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="generator" content={Astro.generator} />
+    <style is:inline>
+      @layer reset, base, components, page-sections, utils, overrides;
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+    <script>
+      if (window.inEditorMode) {
+        import("../../live-editing");
+      }
+    </script>
+
+    <SEO
+      title={formattedTitle}
+      description={pageDescription}
+      openGraph={{
+        basic: {
+          title: formattedTitle,
+          type: "website",
+          image: pageImage,
+        },
+        optional: {
+          description: pageDescription,
+        },
+      }}
+      extend={{
+        link: [
+          {
+            rel: "canonical",
+            href: props.canonical || Astro.url.href,
+          },
+        ],
+      }}
+    />
+
+    <StructuredData site={seoData} />
+
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+    <script>
+      import "@choctawnationofoklahoma/lite-vimeo";
+      import "@justinribeiro/lite-youtube";
+    </script>
+  </body>
+</html>

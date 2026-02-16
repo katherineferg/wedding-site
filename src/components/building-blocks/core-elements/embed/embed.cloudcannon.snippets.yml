@@ -1,0 +1,18 @@
+embed:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - Embed
+    icon: data_object
+  definitions:
+    component_name: Embed
+    named_args:
+      - editor_key: html
+        type: string
+      - editor_key: aspectRatio
+        type: string
+        optional: true
+        remove_empty: true
+  _inputs_from_glob:
+    - /src/components/building-blocks/core-elements/embed/embed.cloudcannon.inputs.yml

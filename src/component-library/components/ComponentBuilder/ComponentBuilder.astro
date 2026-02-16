@@ -1,0 +1,195 @@
+---
+/**
+ * ComponentBuilder
+ *
+ * A visual drag-and-drop component builder for creating Astro components
+ * by composing building blocks. Components can be configured, nested,
+ * and exported as production-ready Astro component packages.
+ */
+
+import type { ComponentInfo, ComponentMetadata, NestingRules } from "./types";
+import Button from "../../../components/building-blocks/core-elements/button/Button.astro";
+import Slider from "../../../components/building-blocks/forms/slider/Slider.astro";
+
+interface Props {
+  components: ComponentInfo[];
+  componentsByCategory: Record<string, ComponentInfo[]>;
+  metadataMap: Record<string, ComponentMetadata>;
+  nestedBlockProperties: string[];
+  nestingRules: NestingRules;
+  pageSectionCategories: string[];
+}
+
+const {
+  components,
+  componentsByCategory,
+  metadataMap,
+  nestedBlockProperties,
+  nestingRules,
+  pageSectionCategories,
+} = Astro.props;
+
+// Serialize data for client
+const builderData = {
+  components,
+  componentsByCategory,
+  metadataMap,
+  nestedBlockProperties,
+  nestingRules,
+  pageSectionCategories,
+};
+---
+
+<div class="component-builder" data-builder-data={JSON.stringify(builderData)}>
+  <!-- Template for reusable Slider component -->
+  <template id="slider-template">
+    <Slider id="slider-template-id" name="slider-template" />
+  </template>
+
+  <!-- Templates for reusable Button components -->
+  <template id="button-ghost-template">
+    <Button element="button" text="Button" variant="ghost" size="sm" class="sandbox-item-btn" />
+  </template>
+
+  <template id="button-delete-template">
+    <Button
+      element="button"
+      text="Delete"
+      iconName="trash"
+      hideText={true}
+      variant="ghost"
+      size="md"
+      class="sandbox-item-btn sandbox-item-btn-delete"
+    />
+  </template>
+
+  <template id="button-close-template">
+    <Button
+      element="button"
+      text="Close"
+      iconName="x-mark"
+      hideText={true}
+      variant="ghost"
+      size="lg"
+      class="component-picker-close"
+    />
+  </template>
+
+  <!-- Export Bar -->
+  <div class="export-bar">
+    <h1>Component Builder</h1>
+    <div class="export-bar-actions">
+      <Button
+        element="button"
+        text="Export Component"
+        variant="primary"
+        size="md"
+        id="export-btn"
+        disabled
+      />
+    </div>
+  </div>
+
+  <div class="builder-layout">
+    <!-- Main Builder Area -->
+    <main class="builder-main">
+      <div class="sandbox-container">
+        <div class="sandbox" id="sandbox">
+          <!-- Rendered by JavaScript -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Properties Sidebar (Right) -->
+    <aside class="prop-sidebar" id="prop-sidebar">
+      <div class="sidebar-header" id="sidebar-header">
+        <div id="sidebar-title">Component Props</div>
+      </div>
+      <div class="sidebar-content" id="sidebar-content">
+        <p class="sidebar-empty">Select a component to edit its properties</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Export Configuration Modal -->
+  <div class="export-config-overlay" id="export-config-overlay" style="display: none;">
+    <div class="export-config-modal">
+      <div class="export-config-header">
+        <h2>Export Component</h2>
+        <div id="export-config-close"></div>
+      </div>
+      <div class="export-config-content">
+        <div class="export-config-field">
+          <label for="component-type">Component Type</label>
+          <select id="component-type" class="export-config-select">
+            <option value="page-section">Page Section</option>
+            <option value="building-block">Building Block</option>
+          </select>
+        </div>
+
+        <div class="export-config-field" id="page-section-category-field">
+          <label for="page-section-category">Category</label>
+          <select id="page-section-category" class="export-config-select">
+            <!-- Populated by JavaScript -->
+          </select>
+          <div class="export-config-field-note">Or enter a custom category:</div>
+          <input
+            type="text"
+            id="custom-page-section-category"
+            class="export-config-input"
+            placeholder="e.g., testimonials"
+          />
+        </div>
+
+        <div class="export-config-field" id="building-block-category-field" style="display: none;">
+          <label for="building-block-category">Category</label>
+          <select id="building-block-category" class="export-config-select">
+            <option value="core-elements">Core Elements</option>
+            <option value="forms">Forms</option>
+            <option value="wrappers">Wrappers</option>
+          </select>
+        </div>
+
+        <div class="export-config-field">
+          <label for="component-name">Component Name</label>
+          <input
+            type="text"
+            id="component-name"
+            class="export-config-input"
+            placeholder="my-component"
+          />
+          <div class="export-config-field-note">Use kebab-case (lowercase with hyphens)</div>
+        </div>
+
+        <div class="export-config-preview">
+          <div class="export-config-preview-label">Component Path:</div>
+          <code id="component-path-preview">page-sections/my-category/my-component</code>
+        </div>
+      </div>
+      <div class="export-config-footer">
+        <Button
+          element="button"
+          text="Cancel"
+          variant="ghost"
+          size="md"
+          id="export-config-cancel"
+        />
+        <Button
+          element="button"
+          text="Export"
+          variant="primary"
+          size="md"
+          id="export-config-confirm"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import "./index";
+</script>
+
+<style lang="pcss" is:global>
+  @import './styles.pcss';
+</style>

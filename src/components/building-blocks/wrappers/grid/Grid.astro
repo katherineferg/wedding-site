@@ -1,0 +1,103 @@
+---
+import GridItem from "./GridItem.astro";
+
+const {
+  layout = "center",
+  minItemWidth = 200,
+  maxItemWidth = 320,
+  class: className,
+  style: userStyle,
+  items = [],
+  label,
+  gap = "md",
+  editable = true,
+  _component,
+  "data-prop": dataProp = "items",
+  ...htmlAttributes
+} = Astro.props;
+
+const slugifyLabel = (label: string) => {
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+};
+
+if (!htmlAttributes.id && label) {
+  htmlAttributes.id = slugifyLabel(label);
+}
+
+const gridStyles = [
+  `--min-item-width: ${minItemWidth}px`,
+  `--max-item-width: ${maxItemWidth}px`,
+  `--grid-spacing: var(--spacing-${gap})`,
+  userStyle,
+]
+  .filter(Boolean)
+  .join("; ");
+
+const arrayDataAttributes = editable
+  ? {
+      "data-editable": "array",
+      "data-prop": dataProp,
+      "data-component-key": "_component",
+      "data-id-key": "_component",
+    }
+  : {};
+
+const hasItems = items?.length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+
+if (!_component && !hasItems && !hasSlotContent) return;
+---
+
+<div
+  {...arrayDataAttributes}
+  class:list={["grid", `layout-${layout}`, className]}
+  style={gridStyles}
+  {...htmlAttributes}
+>
+  <slot>
+    {
+      items &&
+        items.length > 0 &&
+        items.map((item: any) => (
+          <editable-array-item data-component="building-blocks/wrappers/grid/grid-item">
+            <GridItem class:list={`layout-${layout}`} contentSections={item.contentSections} />
+          </editable-array-item>
+        ))
+    }
+  </slot>
+</div>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .grid {
+      gap: var(--grid-spacing, --spacing-md);
+      margin-top: var(--spacing-lg);
+      width: 100%;
+
+      &.layout-start {
+        align-items: stretch;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(var(--min-item-width), 100%), 1fr));
+        justify-content: start;
+      }
+
+      &.layout-center {
+        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        > editable-array-item,
+        > .grid-item {
+          flex: 1 1 var(--min-item-width, 200px);
+          max-width: var(--max-item-width, 320px);
+          min-width: min(var(--min-item-width, 200px), 100%);
+        }
+      }
+    }
+  }
+</style>

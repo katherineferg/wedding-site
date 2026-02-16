@@ -1,0 +1,227 @@
+---
+import Heading from "@core-elements/heading/Heading.astro";
+import ContentSelectorPanel from "./ContentSelectorPanel.astro";
+
+const {
+  items,
+  navigationPosition = "start",
+  class: className,
+  label,
+  editable = true,
+  "data-prop": customDataProp = "items",
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const slugifyLabel = (label: string) => {
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+};
+
+if (!htmlAttributes.id && label) {
+  htmlAttributes.id = slugifyLabel(label);
+}
+
+const uniqueId = crypto.randomUUID();
+
+const arrayDataAttributes = editable
+  ? {
+      "data-editable": "array",
+      "data-prop": customDataProp,
+      "data-component-key": "_component",
+      "data-id-key": "_component",
+    }
+  : {};
+---
+
+<section
+  class:list={["content-selector", `nav-${navigationPosition}`, className]}
+  data-uid={uniqueId}
+  {...htmlAttributes}
+>
+  {
+    items?.map((item: any, index: number) => (
+      <input
+        type="radio"
+        name={`tabs-${uniqueId}`}
+        id={`tab-${uniqueId}-${index}`}
+        class="input"
+        hidden
+        checked={index === 0}
+        autocomplete="off"
+      />
+    ))
+  }
+
+  <div class="tabs" role="tablist">
+    {
+      items?.map((item: any, index: number) => (
+        <label
+          class="tab"
+          id={`tablabel-${uniqueId}-${index}`}
+          for={`tab-${uniqueId}-${index}`}
+          role="tab"
+          aria-controls={`panel-${uniqueId}-${index}`}
+          tabindex="0"
+          aria-selected={index === 0}
+        >
+          <Heading
+            text={item.title}
+            level="h3"
+            size="h3"
+            alignX={navigationPosition === "top" ? "center" : "start"}
+            class="tab-heading"
+            editable={false}
+          />
+        </label>
+      ))
+    }
+  </div>
+
+  <div class="panels" {...arrayDataAttributes}>
+    {
+      items?.map((item: any, index: number) => (
+        <editable-array-item data-component="building-blocks/wrappers/content-selector/content-selector-panel">
+          <ContentSelectorPanel
+            index={index}
+            uniqueId={uniqueId}
+            contentSections={item.contentSections}
+          />
+        </editable-array-item>
+      ))
+    }
+  </div>
+
+  <script>
+    function updateContentSelectorAria(el: HTMLElement) {
+      const inputs = Array.from(el.querySelectorAll<HTMLInputElement>('input.input[type="radio"]'));
+      const tabs = Array.from(el.querySelectorAll<HTMLElement>('[role="tab"]'));
+      const panels = Array.from(el.querySelectorAll<HTMLElement>('[role="tabpanel"]'));
+      const checked = el.querySelector<HTMLInputElement>('input.input[type="radio"]:checked');
+      const checkedIndex = checked ? inputs.indexOf(checked) : 0;
+      tabs.forEach((tab: HTMLElement, i: number) =>
+        tab.setAttribute("aria-selected", i === checkedIndex ? "true" : "false")
+      );
+      panels.forEach((panel: HTMLElement, i: number) =>
+        panel.setAttribute("aria-hidden", i !== checkedIndex ? "true" : "false")
+      );
+    }
+
+    function setupContentSelectors() {
+      document.querySelectorAll("section.content-selector").forEach((node) => {
+        if (!(node instanceof HTMLElement)) return;
+        const el: HTMLElement = node;
+        const inputs = el.querySelectorAll<HTMLInputElement>('input.input[type="radio"]');
+        inputs.forEach((input) => {
+          input.addEventListener("change", () => updateContentSelectorAria(el));
+        });
+        updateContentSelectorAria(el);
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setupContentSelectors);
+    } else {
+      setupContentSelectors();
+    }
+  </script>
+</section>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .content-selector {
+      --content-selector-border-width: 1px;
+      display: flex;
+      margin-top: var(--spacing-lg);
+
+      > .input {
+        display: none;
+      }
+
+      > .tabs {
+        border: 0 solid var(--color-bg-muted);
+      }
+
+      > .tabs > .tab {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: block;
+        padding: var(--spacing-md);
+        position: relative;
+        transition: background-color var(--animation-normal) ease-in-out;
+        width: 100%;
+
+        &::before {
+          background: transparent;
+          content: "";
+          inset-block: 0;
+          inset-inline-start: calc(var(--content-selector-border-width) * -1);
+          position: absolute;
+          transition:
+            transform var(--animation-normal),
+            background var(--animation-normal);
+        }
+
+        &:hover {
+          background: var(--color-state-hover);
+        }
+      }
+
+      > .tabs > .tab > .tab-heading {
+        margin: 0;
+      }
+
+      > .panels {
+        flex: 1;
+        width: 100%;
+      }
+
+      @each $i in 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 {
+        .input:nth-of-type($i):checked ~ .tabs > .tab:nth-of-type($i)::before {
+          background: var(--color-border-strong);
+        }
+
+        .input:nth-of-type($i):checked ~ .panels > .panel:nth-of-type($i),
+        .input:nth-of-type($i):checked ~ .panels > editable-array-item:nth-of-type($i) > .panel {
+          display: revert;
+        }
+      }
+    }
+
+    .content-selector.nav-start {
+      gap: var(--spacing-em-lg);
+
+      > .tabs {
+        border-inline-start-width: var(--content-selector-border-width);
+        max-width: 20rem;
+        min-width: 10rem;
+        width: fit-content;
+      }
+
+      > .tabs > .tab {
+        &::before {
+          width: var(--content-selector-border-width);
+        }
+      }
+    }
+
+    .content-selector.nav-top {
+      flex-direction: column;
+
+      > .tabs {
+        border-bottom-width: var(--content-selector-border-width);
+        display: flex;
+        margin-bottom: var(--spacing-md);
+      }
+
+      > .tabs > .tab::before {
+        height: var(--content-selector-border-width);
+        inset-block: 100%;
+        width: 100%;
+      }
+    }
+  }
+</style>

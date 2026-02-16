@@ -1,0 +1,118 @@
+---
+import Component from "@components/utils/renderBlock.astro";
+
+const {
+  direction = "row",
+  alignX = "start",
+  buttonSections,
+  editable = true,
+  class: className,
+  label,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const slugifyLabel = (label: string) => {
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+};
+
+if (!htmlAttributes.id && label) {
+  htmlAttributes.id = slugifyLabel(label);
+}
+
+const alignMap = {
+  start: "align-start",
+  center: "align-center",
+  end: "align-end",
+} as const;
+
+const alignClass = alignMap[alignX as keyof typeof alignMap] ?? "align-start";
+
+const hasButtonSections = buttonSections?.length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+
+if (!_component && !hasButtonSections && !hasSlotContent) return;
+---
+
+<div
+  class:list={["button-group", direction === "column" ? "column" : "row", alignClass, className]}
+  {...htmlAttributes}
+>
+  <slot>
+    {
+      buttonSections && buttonSections.length > 0 && (
+        <Component contentSections={buttonSections} editable={editable} propName="buttonSections" />
+      )
+    }
+  </slot>
+</div>
+
+<style lang="pcss" is:global>
+  @layer components {
+    .button-group {
+      position: relative;
+      margin-top: var(--spacing-lg);
+      container-type: inline-size;
+      width: 100%;
+
+      &, > editable-array {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+      }
+
+      &.column {
+        &, > editable-array {
+          flex-direction: column;
+        }
+
+        &.align-start {
+          &, > editable-array {
+            align-items: flex-start;
+          }
+        }
+
+        &.align-center {
+          &, > editable-array {
+            align-items: center;
+          }
+        }
+
+        &.align-end {
+          &, > editable-array {
+            align-items: flex-end;
+          }
+        }
+      }
+
+      &.row {
+        &, > editable-array {
+          flex-direction: row;
+        }
+      }
+
+      &.align-center {
+        &, > editable-array {
+          justify-content: center;
+        }
+      }
+
+      &.align-end {
+        &, > editable-array {
+          justify-content: flex-end;
+        }
+      }
+
+      &.align-start {
+        &, > editable-array {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+</style>

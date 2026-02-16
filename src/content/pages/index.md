@@ -41,7 +41,7 @@ pageSections:
       story is unique, but the one thing they all have in common is wanting to
       celebrate their love with the people who matter most.
     buttonSections: []
-    imageSource:
+    imageSource: /src/assets/images/ceremony-hannah-larsen-2.jpg
     imageAlt: Outdoor wedding ceremony
     imageAspectRatio: square
     imageRounded: true

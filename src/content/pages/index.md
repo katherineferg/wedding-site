@@ -129,29 +129,29 @@ pageSections:
         contentSections:
           - _component: building-blocks/core-elements/text
             text: >-
-              A celebrant writes and leads your wedding ceremony. Unlike a
-              registrar who follows a set script, I work with you to create
-              something that feels completely personal. I get to know your
-              story, help shape the words and the flow, and on the day I guide
-              everything so you can relax and just be in the moment.
+              My job as a celebrant is to work with each couple to craft their
+              ideal ceremony. I work with you to create something that feels
+              completely personal. I get to know you as a couple, which helps
+              shape the words and the flow, and on the day I guide everything so
+              you can relax and just be in the moment. I also ensure all
+              paperwork is correct, and ready to send to the BDM register.
       - _component: building-blocks/wrappers/accordion/accordion-item
         title: How far in advance should I book?
         contentSections:
           - _component: building-blocks/core-elements/text
             text: >-
               The earlier the better! Most couples get in touch six to twelve
-              months before their wedding, but I've also helped with shorter
-              timelines. As soon as you have a date in mind, drop me a message
-              and we can check availability.
+              months before their wedding, but I've also helped with *far*
+              shorter timelines! As soon as you have a date in mind, drop me a
+              message and we can check availability.
       - _component: building-blocks/wrappers/accordion/accordion-item
         title: Do you travel outside Dunedin?
         contentSections:
           - _component: building-blocks/core-elements/text
             text: >-
-              Absolutely. I'm based in Dunedin but I'm happy to travel around
-              Otago and beyond for the right celebration. Whether it's a beach,
-              a garden, a mountaintop, or your own backyard, I'll be there.
-              Travel costs may apply depending on distance.
+              Definitely! I'm based in Dunedin but I'm happy to travel around
+              Otago and beyond for the right celebration. Travel costs may apply
+              depending on distance.
       - _component: building-blocks/wrappers/accordion/accordion-item
         title: What happens at our first meeting?
         contentSections:
@@ -161,17 +161,15 @@ pageSections:
               us to meet, chat about what you're imagining for your ceremony,
               and see if we're a good fit. I'll walk you through how the process
               works and answer any questions you have. We can meet over coffee
-              or hop on a video call -- whatever suits you best.
+              or hop on a video call - whatever suits you best!
       - _component: building-blocks/wrappers/accordion/accordion-item
         title: Can we write our own vows?
         contentSections:
           - _component: building-blocks/core-elements/text
             text: >-
-              Of course! Personal vows are one of my favourite parts of a
-              ceremony. If you'd like to write your own, I can give you tips and
-              guidance to help you feel confident. And if writing vows isn't
-              your thing, that's completely fine too -- we'll find words
-              together that feel right for both of you.
+              Of course! Personal vows are the best part of the ceremony. And if
+              writing vows isn't your thing, that's completely fine, too; we'll
+              find words together that feel right for both of you.
       - _component: building-blocks/wrappers/accordion/accordion-item
         title: How much do you charge?
         contentSections:
@@ -180,7 +178,7 @@ pageSections:
               Every ceremony is a little different, so I put together a quote
               based on what you need. The best way to get an idea of cost is to
               get in touch and tell me a bit about your plans. I'm always happy
-              to have a no-obligation chat.
+              to have a no-obligation chat!
     maxContentWidth: xl
     paddingHorizontal: xl
     paddingVertical: 3xl

@@ -19,17 +19,20 @@ pageSections:
     overlay: dark
     paddingVertical: 6xl
   - _component: page-sections/features/feature-split
-    eyebrow: Eyebrow text
-    heading: What I love about this work
+    eyebrow:
+    heading:
     subtext: >-
-      I love working with couples to ensure their ceremony is just how they
-      imagined it. Working closely with each couple has shown me that everyone's
-      story is unique, but the one thing they all have in common is wanting to
-      celebrate their love with the people who matter most.
+      I've had the privilege of living in this beautiful city for most of my
+      life, and now, I've had the chance to perform ceremonies in Dunedin's most
+      beautiful and iconic spots.<br><br>I love working with couples to ensure
+      their ceremony is just how they imagined it. Working closely with each
+      couple has shown me that everyone's story is unique, but the one thing
+      they all have in common is wanting to celebrate their love with the people
+      who matter most.
     buttonSections: []
     imageSource: /src/assets/images/wedding-moment.jpg
     imageAlt: A beautiful wedding moment
-    imageAspectRatio: portrait
+    imageAspectRatio: square
     imageRounded: true
     reverse: true
     colorScheme: default

@@ -6,6 +6,9 @@ pageSections:
     eyebrow: Wedding Celebrant, Dunedin
     heading: Hi there, I'm Kate
     subtext: >-
+      Your local Dunedin celebrant!
+
+
       I love creating ceremonies that feel personal, fun, and true to each
       couple's story. Whether you're planning a big celebration or a small,
       intimate gathering, I'll make sure your ceremony feels relaxed, memorable,
@@ -23,6 +26,29 @@ pageSections:
     imageAlt: Kate Ferguson, wedding celebrant
     colorScheme: default
     backgroundColor: base
+  - _component: page-sections/features/feature-split
+    eyebrow:
+    heading: Every ceremony tells a story
+    subtext: >-
+      I became a celebrant in November 2023. After performing my first wedding
+      for two very close friends (those stunners on the right), I quickly
+      realised how special, and how much of an honour it is to be part of
+      someone's big day.
+
+
+      I love working with couples to ensure their ceremony is just how they
+      imagined it. Working closely with each couple has shown me that everyone's
+      story is unique, but the one thing they all have in common is wanting to
+      celebrate their love with the people who matter most.
+    buttonSections: []
+    imageSource:
+    imageAlt: Outdoor wedding ceremony
+    imageAspectRatio: square
+    imageRounded: true
+    reverse: false
+    colorScheme: default
+    backgroundColor: base
+    paddingVertical: 2xl
   - _component: page-sections/people/testimonial-section
     text: >-
       Kate, we had the most incredible time with you as our celebrant! It meant
@@ -42,28 +68,6 @@ pageSections:
     paddingVertical: 2xl
     colorScheme: inherit
     backgroundColor: accent
-  - _component: page-sections/features/feature-split
-    eyebrow:
-    heading: Every ceremony tells a story
-    subtext: >-
-      I became a celebrant in November 2023. After performing my first wedding
-      for two very close friends, I quickly realised how special, and how much
-      of an honour it is to be part of someone's big day.
-
-
-      I love working with couples to ensure their ceremony is just how they
-      imagined it. Working closely with each couple has shown me that everyone's
-      story is unique, but the one thing they all have in common is wanting to
-      celebrate their love with the people who matter most.
-    buttonSections: []
-    imageSource: /src/assets/images/ceremony-outdoor.jpg
-    imageAlt: Outdoor wedding ceremony
-    imageAspectRatio: square
-    imageRounded: true
-    reverse: false
-    colorScheme: default
-    backgroundColor: base
-    paddingVertical: 2xl
   - _component: page-sections/people/testimonial-section
     text: >-
       Not many people get to marry their special someone amidst a state of

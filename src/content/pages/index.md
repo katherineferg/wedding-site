@@ -42,34 +42,6 @@ pageSections:
     paddingVertical: 2xl
     colorScheme: inherit
     backgroundColor: accent
-  - _component: page-sections/builders/custom-section
-    label: ''
-    contentSections:
-      - _component: building-blocks/core-elements/image
-        source: /src/assets/images/3480990e-983c-4148-9e97-a91e8e0ff31d.jpeg
-        alt: A beautiful wedding moment
-        sizes: '(max-width: 1280px) 100vw, 1280px'
-        widths:
-          - 640
-          - 1280
-          - 2560
-        rounded: false
-        aspectRatio: landscape
-        positionVertical: center
-        positionHorizontal: center
-        priority: false
-    maxContentWidth: ''
-    paddingHorizontal: none
-    paddingVertical: none
-    colorScheme: inherit
-    backgroundColor: none
-    backgroundImage:
-      source: ''
-      alt: ''
-      positionVertical: top
-      positionHorizontal: center
-    overlay: none
-    rounded: false
   - _component: page-sections/features/feature-split
     eyebrow: Eyebrow text
     heading: Every ceremony tells a story

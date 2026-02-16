@@ -34,34 +34,6 @@ pageSections:
     colorScheme: default
     backgroundColor: base
     paddingVertical: 2xl
-  - _component: page-sections/builders/custom-section
-    label: ''
-    contentSections:
-      - _component: building-blocks/core-elements/image
-        source: /src/assets/images/ceremony-hannah-larsen-2.jpg
-        alt: Wedding ceremony moment
-        sizes: '(max-width: 1280px) 100vw, 1280px'
-        widths:
-          - 640
-          - 1280
-          - 2560
-        rounded: false
-        aspectRatio: landscape
-        positionVertical: center
-        positionHorizontal: center
-        priority: false
-    maxContentWidth: ''
-    paddingHorizontal: none
-    paddingVertical: none
-    colorScheme: inherit
-    backgroundColor: none
-    backgroundImage:
-      source: ''
-      alt: ''
-      positionVertical: top
-      positionHorizontal: center
-    overlay: none
-    rounded: false
   - _component: page-sections/features/feature-split
     eyebrow: Eyebrow text
     heading: What I love about this work

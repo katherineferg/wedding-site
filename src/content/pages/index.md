@@ -30,16 +30,18 @@ pageSections:
     eyebrow:
     heading: Every ceremony tells a story
     subtext: >-
-      I became a celebrant in November 2023. After performing my first wedding
-      for two very close friends (those stunners on the right), I quickly
+      I first became a celebrant in November 2023. After performing my first
+      wedding for two very close friends (those stunners pictured), I quickly
       realised how special, and how much of an honour it is to be part of
       someone's big day.
 
 
-      I love working with couples to ensure their ceremony is just how they
-      imagined it. Working closely with each couple has shown me that everyone's
-      story is unique, but the one thing they all have in common is wanting to
-      celebrate their love with the people who matter most.
+      That first ceremony gave me the opportunity to see how truly special
+      marriage is; witnessing vows being declared between couples that are
+      honest, loving, funny, and truly from the heart is something so
+
+
+      &nbsp;
     buttonSections: []
     imageSource: /src/assets/images/ceremony-hannah-larsen-2.jpg
     imageAlt: Outdoor wedding ceremony

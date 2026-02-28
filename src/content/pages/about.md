@@ -76,11 +76,6 @@ pageSections:
               Otago and beyond for the right celebration. Travel costs may apply
               depending on distance.
       - _component: building-blocks/wrappers/accordion/accordion-item
-        title: Question text
-        contentSections:
-          - _component: building-blocks/core-elements/text
-            text: Answer text goes here.
-      - _component: building-blocks/wrappers/accordion/accordion-item
         title: What happens in our first meeting?
         contentSections:
           - _component: building-blocks/core-elements/text

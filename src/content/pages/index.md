@@ -27,7 +27,7 @@ pageSections:
     colorScheme: default
     backgroundColor: highlight
   - _component: page-sections/features/feature-split
-    eyebrow: a bit about me
+    eyebrow: my celebrant story
     heading:
     subtext: >-
       I first became a celebrant in November 2023. After performing my very
@@ -122,24 +122,6 @@ pageSections:
     paddingVertical: md
     colorScheme: inherit
     backgroundColor: highlight
-  - _component: page-sections/people/testimonial-section
-    text: >-
-      We are so grateful that Kate officiated our wedding in November 2024. From
-      the very beginning, she made us feel comfortable and took the time to
-      truly understand our vision for the day. Her words during the ceremony
-      were heartfelt and beautifully captured our story, making the moment
-      unforgettable for us and our guests. We couldn't have asked for a more
-      perfect wedding celebrant and wholeheartedly recommend Kate to anyone
-      looking for a warm, thoughtful, and genuine presence on their wedding day.
-    authorName: Katie & Jack
-    authorDescription: ''
-    authorImage: /src/assets/images/couple-katie-jack.jpg
-    alignX: center
-    maxContentWidth: xl
-    paddingHorizontal: xl
-    paddingVertical: 2xl
-    colorScheme: inherit
-    backgroundColor: base
   - _component: page-sections/ctas/cta-center
     heading: Let's make your ceremony unforgettable
     subtext: >-

@@ -38,8 +38,41 @@ pageSections:
     imageRounded: true
     reverse: true
     colorScheme: default
-    backgroundColor: surface
+    backgroundColor: highlight
     paddingVertical: 2xl
+  - _component: page-sections/people/testimonial-section
+    text: >-
+      Thanks Kate, we LOVED our ceremony. So impressed with how quickly you got
+      our ceremony planned and how touching and perfect your words were. It was
+      so personalised and exactly what we wanted. You made our special day fun
+      and stress free. We absolutely can't recommend Kate enough as a celebrant!
+    authorName: Josh & Mick
+    authorDescription:
+    authorImage: /src/assets/images/b9e52fb543eadbcf30d712dcc07f6bf4.jpeg
+    alignX: center
+    maxContentWidth: xl
+    paddingHorizontal: xl
+    paddingVertical: sm
+    colorScheme: inherit
+    backgroundColor: base
+  - _component: page-sections/people/testimonial-section
+    text: >-
+      We are so grateful that Kate officiated our wedding in November 2024. From
+      the very beginning, she made us feel comfortable and took the time to
+      truly understand our vision for the day. Her words during the ceremony
+      were heartfelt and beautifully captured our story, making the moment
+      unforgettable for us and our guests. We couldn't have asked for a more
+      perfect wedding celebrant and wholeheartedly recommend Kate to anyone
+      looking for a warm, thoughtful, and genuine presence on their wedding day.
+    authorName: Katie & Jack
+    authorDescription:
+    authorImage: /src/assets/images/couple-katie-jack.jpg
+    alignX: center
+    maxContentWidth: xl
+    paddingHorizontal: xl
+    paddingVertical: sm
+    colorScheme: inherit
+    backgroundColor: highlight
   - _component: page-sections/info-blocks/faq-section
     heading: Frequently Asked Questions
     headingLevel: h2

@@ -21,7 +21,7 @@ pageSections:
         iconName: envelope
         iconPosition: before
         variant: primary
-        size: lg
+        size: md
     imageSource: /src/assets/images/img-7328.png
     imageAlt: Kate Ferguson, wedding celebrant
     colorScheme: default

@@ -139,7 +139,7 @@ pageSections:
     colorScheme: contrast
     backgroundColor: none
     backgroundImage:
-      source: /src/assets/images/ceremony-outdoor.jpg
+      source: /src/assets/images/img-3735.jpeg
       alt: Outdoor wedding ceremony
       positionVertical: center
       positionHorizontal: center

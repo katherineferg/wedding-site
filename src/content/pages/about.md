@@ -60,7 +60,7 @@ pageSections:
       positionVertical: top
       positionHorizontal: center
     overlay: dark
-    rounded: false
+    rounded: true
     paddingVertical: 6xl
 description: ''
 ---

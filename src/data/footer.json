@@ -5,21 +5,8 @@
     {
       "name": "Home",
       "path": "/"
-    },
-    {
-      "name": "About",
-      "path": "/about/"
     }
   ],
-  "socials": [
-    {
-      "icon": "social/instagram",
-      "link": "#"
-    },
-    {
-      "icon": "social/facebook",
-      "link": "#"
-    }
-  ],
+  "socials": [],
   "footerText": "Kate Ferguson - Wedding Celebrant | Dunedin, New Zealand | yourcelebrantkate@gmail.com"
 }

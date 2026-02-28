@@ -6,7 +6,7 @@ pageSections:
     eyebrow: Wedding Celebrant, Dunedin
     heading: Hi there, I'm Kate
     subtext: >-
-      Your local Dunedin celebrant!
+      Your local Dunedin celebrant.
 
 
       I love creating ceremonies that feel personal, fun, and true to each
@@ -27,18 +27,32 @@ pageSections:
     colorScheme: default
     backgroundColor: highlight
   - _component: page-sections/features/feature-split
-    eyebrow:
-    heading: Every ceremony tells a story
+    eyebrow: a bit about me
+    heading:
     subtext: >-
-      I first became a celebrant in November 2023. After performing my first
-      wedding for two very close friends (those stunners pictured), I quickly
-      realised how special, and how much of an honour it is to be part of
-      someone's big day.
+      I first became a celebrant in November 2023. After performing my very
+      first wedding for two close friends (those absolute stunners pictured
+      there), I quickly realised what an incredible honour it is to stand beside
+      two people on one of the biggest days of their lives.
 
 
-      That first ceremony gave me the opportunity to see how truly special
-      marriage is; witnessing vows being declared between couples that are
-      honest, loving, funny, and truly from the heart is something so
+      That first ceremony showed me just how deeply special marriage truly is,
+      and it sparked a passion in me that I didn’t even know was there. Since
+      then, I’ve been lucky enough to be part of many more ceremonies, each with
+      its own unique story.
+
+
+      I always knew marriage was meaningful, but as a celebrant, hearing two
+      people bare their souls to one another gives it a whole new depth. It’s
+      emotional, powerful, and something I never take for granted.
+
+
+      When you choose me as your celebrant, you’re not just getting someone to
+      stand at the front and read a script. I’ll work closely with you to create
+      a ceremony that feels relaxed, personal, and completely true to each
+      couple. I’ll guide you through the legal side of things, and make sure the
+      whole process feels easy and stress-free. My goal is simple - to tell your
+      story in a way that feels natural, heartfelt, and completely yours.
 
 
       &nbsp;
@@ -86,7 +100,7 @@ pageSections:
     alignX: center
     maxContentWidth: xl
     paddingHorizontal: xl
-    paddingVertical: 2xl
+    paddingVertical: md
     colorScheme: inherit
     backgroundColor: base
   - _component: page-sections/features/feature-split

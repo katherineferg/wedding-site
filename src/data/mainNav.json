@@ -6,6 +6,11 @@
       "name": "Home",
       "path": "/",
       "children": []
+    },
+    {
+      "name": "About",
+      "path": "/about",
+      "children": []
     }
   ],
   "buttonSections": []

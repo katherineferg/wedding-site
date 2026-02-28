@@ -86,6 +86,25 @@ pageSections:
     backgroundColor: highlight
   - _component: page-sections/people/testimonial-section
     text: >-
+      Kate was incredible. My (now) husband and I opted for a more casual
+      ceremony, amongst nature and close family. We didn’t have a team
+      organising it for us and didn’t know what to expect. Kate made us feel
+      really at ease in terms of the celebration and the legal stuff. She sorted
+      all documents and oriented us on what was needed. But best of all was her
+      incredible perspective on our story and the beautiful words she said
+      during the ceremony. I was holding back tears the entire time. Thank you
+      Kate, from the bottom of my heart.
+    authorName: Bruna & Matt
+    authorDescription:
+    authorImage: /src/assets/images/img-7379.jpeg
+    alignX: center
+    maxContentWidth: xl
+    paddingHorizontal: xl
+    paddingVertical: sm
+    colorScheme: inherit
+    backgroundColor: base
+  - _component: page-sections/people/testimonial-section
+    text: >-
       Not many people get to marry their special someone amidst a state of
       emergency (the worst weather event recorded in Dunedin), but Kate made it
       happen! Our special day was intimate and memorable! Waves crashing, rain
@@ -102,23 +121,7 @@ pageSections:
     paddingHorizontal: xl
     paddingVertical: md
     colorScheme: inherit
-    backgroundColor: base
-  - _component: page-sections/features/feature-split
-    eyebrow: Eyebrow text
-    heading: Big or small, I'll make it yours
-    subtext: >-
-      I have performed intimate ceremonies with only a handful of guests, as
-      well as larger celebrations where everyone travels from near and far to
-      share in the love.
-    buttonSections: []
-    imageSource: /src/assets/images/ceremony-portrait.jpg
-    imageAlt: Wedding ceremony moment
-    imageAspectRatio: portrait
-    imageRounded: true
-    reverse: true
-    colorScheme: default
     backgroundColor: highlight
-    paddingVertical: 2xl
   - _component: page-sections/people/testimonial-section
     text: >-
       We are so grateful that Kate officiated our wedding in November 2024. From

@@ -69,7 +69,7 @@ pageSections:
     paddingHorizontal: xl
     paddingVertical: 2xl
     colorScheme: inherit
-    backgroundColor: accent
+    backgroundColor: highlight
   - _component: page-sections/people/testimonial-section
     text: >-
       Not many people get to marry their special someone amidst a state of
@@ -88,7 +88,7 @@ pageSections:
     paddingHorizontal: xl
     paddingVertical: 2xl
     colorScheme: inherit
-    backgroundColor: highlight
+    backgroundColor: base
   - _component: page-sections/features/feature-split
     eyebrow: Eyebrow text
     heading: Big or small, I'll make it yours
@@ -103,7 +103,7 @@ pageSections:
     imageRounded: true
     reverse: true
     colorScheme: default
-    backgroundColor: surface
+    backgroundColor: highlight
     paddingVertical: 2xl
   - _component: page-sections/people/testimonial-section
     text: >-
@@ -122,7 +122,7 @@ pageSections:
     paddingHorizontal: xl
     paddingVertical: 2xl
     colorScheme: inherit
-    backgroundColor: accent
+    backgroundColor: base
   - _component: page-sections/info-blocks/faq-section
     heading: Common Questions
     headingLevel: h2
@@ -189,7 +189,7 @@ pageSections:
     paddingHorizontal: xl
     paddingVertical: 3xl
     colorScheme: default
-    backgroundColor: base
+    backgroundColor: highlight
   - _component: page-sections/ctas/cta-center
     heading: Let's make your ceremony unforgettable
     subtext: >-

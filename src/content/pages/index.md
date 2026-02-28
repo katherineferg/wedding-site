@@ -25,7 +25,7 @@ pageSections:
     imageSource: /src/assets/images/img-7328.png
     imageAlt: Kate Ferguson, wedding celebrant
     colorScheme: default
-    backgroundColor: base
+    backgroundColor: highlight
   - _component: page-sections/features/feature-split
     eyebrow:
     heading: Every ceremony tells a story

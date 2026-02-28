@@ -32,7 +32,7 @@ pageSections:
       & volleyball, in the hot yoga studio, walking dogs, or having a drink with
       friends in the sun 🥂
     buttonSections: []
-    imageSource: /src/assets/images/wedding-moment.jpg
+    imageSource:
     imageAlt: A beautiful wedding moment
     imageAspectRatio: square
     imageRounded: true

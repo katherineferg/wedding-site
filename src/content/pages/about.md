@@ -32,9 +32,9 @@ pageSections:
       & volleyball, in the hot yoga studio, walking dogs, or having a drink with
       friends in the sun 🥂
     buttonSections: []
-    imageSource:
+    imageSource: /src/assets/images/chatgpt-image-mar-1-2026-12-01-10-pm.png
     imageAlt: A beautiful wedding moment
-    imageAspectRatio: square
+    imageAspectRatio: portrait
     imageRounded: true
     reverse: true
     colorScheme: default

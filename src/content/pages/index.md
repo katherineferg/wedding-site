@@ -17,7 +17,7 @@ pageSections:
       - _component: building-blocks/core-elements/button
         text: Say hello
         hideText: false
-        link: mailto:yourcelebrantkate@gmail.com
+        link: mailto:hello@marriedbykate.co.nz
         iconName: envelope
         iconPosition: before
         variant: primary

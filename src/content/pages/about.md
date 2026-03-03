@@ -2,23 +2,9 @@
 _schema: default
 title: About Kate
 pageSections:
-  - _component: page-sections/heroes/hero-center
-    eyebrow:
-    heading: about me
-    subtext:
-    buttonSections: []
-    colorScheme: contrast
-    backgroundColor: none
-    backgroundImage:
-      source: /src/assets/images/kate-about-photo.jpg
-      alt: Kate Ferguson
-      positionVertical: center
-      positionHorizontal: center
-    overlay: dark
-    paddingVertical: 6xl
   - _component: page-sections/features/feature-split
-    eyebrow: about me
-    heading:
+    eyebrow:
+    heading: ABOUT ME
     subtext: >-
       Born and raised in Dunedin, I've had the privilege of living in this
       awesome city for most of my life. And now, I've had the chance to perform

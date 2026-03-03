@@ -3,8 +3,8 @@ _schema: default
 title: About Kate
 pageSections:
   - _component: page-sections/heroes/hero-center
-    eyebrow: About
-    heading: Meet Kate
+    eyebrow:
+    heading:
     subtext: >-
       Wedding celebrant based in Dunedin, creating ceremonies that feel
       personal, fun, and true to each couple's story.

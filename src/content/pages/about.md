@@ -4,10 +4,8 @@ title: About Kate
 pageSections:
   - _component: page-sections/heroes/hero-center
     eyebrow:
-    heading:
-    subtext: >-
-      Wedding celebrant based in Dunedin, creating ceremonies that feel
-      personal, fun, and true to each couple's story.
+    heading: about me
+    subtext:
     buttonSections: []
     colorScheme: contrast
     backgroundColor: none

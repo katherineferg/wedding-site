@@ -6,14 +6,14 @@ pageSections:
     eyebrow:
     heading: ABOUT ME
     subtext: >-
-      Born and raised in Dunedin, I've had the privilege of living in this
-      awesome city for most of my life. And now, I've had the chance to perform
+      Born and (mostly) raised in Dunedin, I've had the privilege of living in
+      this city for most of my life. And now, I've had the chance to perform
       ceremonies in some of it's most beautiful and iconic spots.
 
 
-      When I'm not doing my celebrant duties, I'm usually found playing netball
-      & volleyball, in the hot yoga studio, walking dogs, or having a drink with
-      friends in the sun 🥂
+      When I'm not doing my celebrant duties and working, I'm usually found
+      playing netball & volleyball, in the hot yoga studio, walking dogs, being
+      with family, or having a drink with friends in the sun 🥂
     buttonSections: []
     imageSource: /src/assets/images/chatgpt-image-mar-1-2026-12-01-10-pm.png
     imageAlt: A beautiful wedding moment

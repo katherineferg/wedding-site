@@ -38,13 +38,13 @@ pageSections:
 
       That first ceremony showed me just how deeply special marriage truly is,
       and it sparked a passion in me that I didn’t even know was there. Since
-      then, I’ve been lucky enough to be part of many more ceremonies, each with
-      its own unique story.
+      then, I’ve been lucky enough to be part of more ceremonies, each with its
+      own unique story.
 
 
       I always knew marriage was meaningful, but as a celebrant, hearing two
       people bare their souls to one another gives it a whole new depth. It’s
-      emotional, powerful, and something I never take for granted.
+      emotional, powerful, and something I'm honoured to be part of.
 
 
       When you choose me as your celebrant, you’re not just getting someone to

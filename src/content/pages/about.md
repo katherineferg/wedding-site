@@ -23,9 +23,8 @@ pageSections:
     heading:
     subtext: >-
       Born and raised in Dunedin, I've had the privilege of living in this
-      beautiful (and lets be honest, cold) city for most of my life. And now,
-      I've had the chance to perform ceremonies in some of it's most beautiful
-      and iconic spots.
+      awesome city for most of my life. And now, I've had the chance to perform
+      ceremonies in some of it's most beautiful and iconic spots.
 
 
       When I'm not doing my celebrant duties, I'm usually found playing netball
@@ -34,7 +33,7 @@ pageSections:
     buttonSections: []
     imageSource: /src/assets/images/chatgpt-image-mar-1-2026-12-01-10-pm.png
     imageAlt: A beautiful wedding moment
-    imageAspectRatio: portrait
+    imageAspectRatio: square
     imageRounded: true
     reverse: true
     colorScheme: default

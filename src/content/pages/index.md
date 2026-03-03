@@ -22,7 +22,7 @@ pageSections:
         iconPosition: before
         variant: primary
         size: md
-    imageSource: /src/assets/images/a62d505526331cea529a8573e13d9ecf-2.jpeg
+    imageSource: /src/assets/images/img-7328.png
     imageAlt: Kate Ferguson, wedding celebrant
     colorScheme: default
     backgroundColor: highlight

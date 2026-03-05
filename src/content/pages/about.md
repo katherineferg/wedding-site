@@ -71,9 +71,9 @@ pageSections:
               My job as a celebrant is to work with each couple to craft their
               ideal ceremony. I work with you to create something that feels
               completely personal. I get to know you as a couple, which helps
-              shape the words and the flow, and on the day I guide everything so
-              you can relax and just be in the moment. I also ensure all
-              paperwork is correct, and ready to send to the BDM register.
+              shape the words and the flow, and on the day I guide everything,
+              and take care of all the legal stuff so you can relax and just be
+              in the moment.
       - _component: building-blocks/wrappers/accordion/accordion-item
         title: How far in advance should I book?
         contentSections:

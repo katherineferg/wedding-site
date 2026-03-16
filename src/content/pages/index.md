@@ -22,7 +22,7 @@ pageSections:
         iconPosition: before
         variant: primary
         size: md
-    imageSource: /src/assets/images/img-7328.png
+    imageSource: /src/assets/images/bruna-matt-28-1.jpg
     imageAlt: Kate Ferguson, wedding celebrant
     colorScheme: default
     backgroundColor: highlight

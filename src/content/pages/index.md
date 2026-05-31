@@ -75,7 +75,7 @@ pageSections:
       you made it feel so meaningful and memorable. We're so thankful you were
       such a big part of it all; we honestly couldn't have asked for anyone
       better.
-    authorName: hannah and larsen
+    authorName: Hannah & Larsen
     authorDescription: ''
     authorImage: /src/assets/images/ceremony-hannah-larsen.jpg
     alignX: center
@@ -113,7 +113,7 @@ pageSections:
       held my umbrella and delivered a heartwarming, short and sweet ceremony.
       To be able to take age-old sentences and make them unique to one couple is
       true talent. We will always cherish Kate, and highly recommend!
-    authorName: Laura &amp; Ben
+    authorName: Laura & Ben
     authorDescription: ''
     authorImage: /src/assets/images/ceremony-laura-ben-beach.jpg
     alignX: center

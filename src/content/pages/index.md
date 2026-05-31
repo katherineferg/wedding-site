@@ -94,7 +94,7 @@ pageSections:
       incredible perspective on our story and the beautiful words she said
       during the ceremony. I was holding back tears the entire time. Thank you
       Kate, from the bottom of my heart.
-    authorName: Bruna &amp; Matt
+    authorName: Bruna & Matt
     authorDescription:
     authorImage: /src/assets/images/img-7379.jpeg
     alignX: center

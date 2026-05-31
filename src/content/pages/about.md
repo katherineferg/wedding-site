@@ -29,7 +29,7 @@ pageSections:
       our ceremony planned and how touching and perfect your words were. It was
       so personalised and exactly what we wanted. You made our special day fun
       and stress free. We absolutely can't recommend Kate enough as a celebrant!
-    authorName: Josh & Mick
+    authorName: Josh &amp; Mick
     authorDescription:
     authorImage: /src/assets/images/b9e52fb543eadbcf30d712dcc07f6bf4.jpeg
     alignX: center
@@ -47,7 +47,7 @@ pageSections:
       unforgettable for us and our guests. We couldn't have asked for a more
       perfect wedding celebrant and wholeheartedly recommend Kate to anyone
       looking for a warm, thoughtful, and genuine presence on their wedding day.
-    authorName: Katie & Jack
+    authorName: Katie &amp; Jack
     authorDescription:
     authorImage: /src/assets/images/couple-katie-jack.jpg
     alignX: center

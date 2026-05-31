@@ -17,7 +17,7 @@ pageSections:
       - _component: building-blocks/core-elements/button
         text: Say hello
         hideText: false
-        link: mailto:hello@marriedbykate.co.nz
+        link: mailto:yourcelebrantkate@gmail.com
         iconName: envelope
         iconPosition: before
         variant: primary
@@ -75,7 +75,7 @@ pageSections:
       you made it feel so meaningful and memorable. We're so thankful you were
       such a big part of it all; we honestly couldn't have asked for anyone
       better.
-    authorName: Hannah & Larsen
+    authorName: Hannah &amp; Larsen
     authorDescription: ''
     authorImage: /src/assets/images/ceremony-hannah-larsen.jpg
     alignX: center
@@ -94,7 +94,7 @@ pageSections:
       incredible perspective on our story and the beautiful words she said
       during the ceremony. I was holding back tears the entire time. Thank you
       Kate, from the bottom of my heart.
-    authorName: Bruna & Matt
+    authorName: Bruna &amp; Matt
     authorDescription:
     authorImage: /src/assets/images/img-7379.jpeg
     alignX: center
@@ -113,7 +113,7 @@ pageSections:
       held my umbrella and delivered a heartwarming, short and sweet ceremony.
       To be able to take age-old sentences and make them unique to one couple is
       true talent. We will always cherish Kate, and highly recommend!
-    authorName: Laura & Ben
+    authorName: Laura &amp; Ben
     authorDescription: ''
     authorImage: /src/assets/images/ceremony-laura-ben-beach.jpg
     alignX: center

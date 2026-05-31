@@ -75,7 +75,7 @@ pageSections:
       you made it feel so meaningful and memorable. We're so thankful you were
       such a big part of it all; we honestly couldn't have asked for anyone
       better.
-    authorName: Hannah & Larsen
+    authorName: hannah and larsen
     authorDescription: ''
     authorImage: /src/assets/images/ceremony-hannah-larsen.jpg
     alignX: center
